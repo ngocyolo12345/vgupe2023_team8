@@ -1,0 +1,23 @@
+.form-signup {
+    margin: 0 auto;
+    max-width: 400px;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    padding: 35px;
+    border: 1px solid black;
+}
+
+.form-signup h2,
+p {
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.heghtcheck {
+    height: 600px;
+}

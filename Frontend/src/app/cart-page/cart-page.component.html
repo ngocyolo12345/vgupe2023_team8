@@ -1,0 +1,124 @@
+<div *ngIf="cart && cart.items.length == 0">
+  <div class="container">
+    <div class="row">
+      <div class="emptyCart card border shadow-0">
+        <div>
+          <img src="../../assets/images/EmptyCart.png" style="width: 300px" />
+        </div>
+
+        <h4 class="card-title mb-4">Your shopping cart is empty!</h4>
+        <div>
+          <a routerLink="/" class="btn btn-light w-15 border mt-2">
+            Back to shop
+          </a>
+          <br />
+          <br />
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="cart && cart.items.length > 0" class="bg-light my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="card border shadow-0">
+          <div class="m-4">
+            <h4 class="card-title mb-4">Your shopping cart</h4>
+
+            <div *ngFor="let cartItem of cart.items">
+              <div class="row gy-3 mb-4 productInCart">
+                <div class="col-lg-5">
+                  <div class="me-lg-5">
+                    <div class="d-flex">
+                      <img
+                        src="data:image/png;base64,{{
+                          cartItem.shoes.imageURL
+                        }}"
+                        class="border rounded me-3"
+                        style="width: 120px"
+                      />
+                      <div class="">
+                        <a href="#" class="nav-link">{{
+                          cartItem.shoes.name
+                        }}</a>
+                        <p class="text-muted">{{ cartItem.shoes.gender }}</p>
+                        <p class="text-muted">{{ cartItem.shoes.brand }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap"
+                >
+                  <div class="">
+                    <select
+                      style="width: 100px"
+                      class="form-select me-4"
+                      #quantitySelect
+                      (change)="changeQuantity(cartItem, quantitySelect.value)"
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                  <div class="">
+                    <h6>{{ cartItem.price.toLocaleString() }}</h6>
+
+                    <small class="text-muted text-nowrap">
+                      {{ cartItem.shoes.price }} per item
+                    </small>
+                  </div>
+                </div>
+                <div
+                  class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2"
+                >
+                  <div class="float-md-end">
+                    <button
+                      class="remove-button btn btn-light border text-danger icon-hover-danger"
+                      (click)="removeFromCart(cartItem)"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="card shadow-0 border">
+          <div class="card-body">
+
+            <hr />
+
+            <div class="mt-3">
+              <a
+                class="btn w-100 shadow-0 mb-2 bg-primary text-white"
+                
+                (click)="Check()"
+              >
+                Check Out
+              </a>
+
+              <a
+                routerLink="//AllProduct"
+                class="btn btn-light w-100 border mb-2"
+              >
+                Back to shop
+              </a>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

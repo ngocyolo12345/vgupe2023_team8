@@ -1,0 +1,29 @@
+
+
+h1 {
+    font-weight: bolder;
+}
+.cards-gallery {
+    display: flex;
+    gap: 1rem;
+}
+.card {
+    height: 40rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .8s;
+}
+.card:hover {
+    flex: 4;
+    cursor: pointer;
+}
+.card-img-overlay {
+    opacity: 0;
+}
+.card-img-overlay:hover {
+    background-color: black;
+    opacity: 0.75;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+}

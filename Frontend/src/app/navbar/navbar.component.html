@@ -1,0 +1,61 @@
+
+
+<!-- nav-ver-2 -->
+<nav class="navbar navbar-expand-lg" style="background-color: #f5f5f5;">
+    <div class="container-fluid px-4 px-lg-5 position-relative">
+        <a class="navbar-brand" routerLink="">
+            <img src="../../assets/images/logo.svg" alt="" style="height: 45px; width: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent-1" aria-controls="navbarSupportedContent-1" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-1">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 position-absolute top-50 start-50 translate-middle">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" routerLink="">Home</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/AllProduct">All Product</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/AllProduct/gender/female">Women</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/AllProduct/gender/male">Men</a></li>
+                <!-- <app-tags></app-tags> -->
+                <!-- <li class="nav-item"><a class="nav-link" routerLink="/AllProduct/tag/sneaker">Sneaker</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/AllProduct/tag/adidas">Adidas</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/AllProduct/tag/Nike">Nike</a></li> -->
+            </ul>
+        </div>
+        <!-- Cart -->
+        <div class="d-flex ms-auto" style="align-items: center;">
+            <app-search style="padding-right: 1.5rem;"></app-search>
+            <button class="cart-btn" type="submit" routerLink="/cart-page">
+                <span class="icon">
+                    <i class="bi-cart-fill"></i>
+                </span>
+                <span class="items-count">
+                    {{totalItem}}
+                </span>
+            </button>
+        </div>
+        <div style="font-size: xx-large; padding-left: 1.5rem;">
+            <div class="dropdown">
+                <a href="" class="text-dark" href="#" role="mouser" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <div *ngIf ="check;else login">
+                        <li><a class="dropdown-item" (click)="logout()">Log out</a></li>
+                    </div>
+                    <ng-template #login>
+                        <li><a class="dropdown-item" routerLink="/login">Signed in as</a></li>
+                    </ng-template>
+                    
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" routerLink="/profile">Your profile</a></li>
+                    <li *ngIf="admin ==true"><a class="dropdown-item" routerLink="/admin">To Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

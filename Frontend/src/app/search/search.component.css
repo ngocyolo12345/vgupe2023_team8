@@ -1,0 +1,45 @@
+.search{
+    position: relative;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    border-color: #333;
+    border: 2px solid;
+    transition: 0.5s;
+    align-items: center;
+    background-color: transparent;
+    padding: 2px;
+    overflow: hidden;
+}
+.search input{
+    position: absolute;
+    width: 92%;
+    padding: 0 0.5rem;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+}
+.search .icon{
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    transition: 0.5s;
+}
+.search .icon:hover{
+    color: rgb(25, 23, 23);
+    background-color: #333;
+}
+.search:focus-within{
+    width: 250px;
+}
+.search input:focus-within{
+    opacity: 1;
+    cursor: initial;
+}

@@ -1,0 +1,56 @@
+.nav-item{
+    margin-right: 10px;
+}
+.nav-item li:hover{
+    overflow: hidden;
+    background-color: #333;
+}
+li::shadow{
+
+    border-radius: 5px;
+}
+.d-flex{
+    float: right;
+}
+.cart-btn{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.cart-btn:hover{
+    background-color: #333;
+}
+.icon{
+    position: absolute;
+    color: dark;
+    font-size: large;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+}
+.items-count{
+    position: absolute;
+    font-size: large;
+    color: #000;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+.dropdown:hover{
+    display: block;
+}
+button:hover .icon{
+    transform: scale(0);
+    color: #fff;
+    transition-delay: 0s;
+}
+button:hover .items-count{
+    transform: scale(1);
+    color: #fff;
+    transition-delay: 0.25s;
+}

@@ -1,0 +1,66 @@
+<div class="container-fluid px-5 py-5">
+    <div class="container px-5 py-5 rounded-4" style="border: 1px solid;">
+        <div class="row px-5">
+            <div class="col col-6">
+                <div class="card h-100" style="background: transparent; justify-content: center;">
+                    <h1>Hi {{username}},</h1>
+                    <h4>Welcome back</h4>
+                    <p>Welcome to our online shoe store! We're excited to have you here and hope you'll find the perfect
+                        pair of shoes for your needs. Our collection features a wide variety of styles, from trendy
+                        sneakers to classic pumps, and everything in between. We offer high-quality shoes from top
+                        brands, so you can trust that you're getting a great product. Our user-friendly website makes it
+                        easy to browse and shop, and our customer service team is always here to help if you have any
+                        questions or concerns. Thank you for choosing us for your shoe shopping needs, and we hope you
+                        enjoy your shopping experience!</p>
+
+                    <h6>Information</h6>
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                            <h6>First Name</h6>
+                            <p class="text-muted">{{firstname}}</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h6>Last Name</h6>
+                            <p class="text-muted">{{lastname}}</p>
+                        </div>
+                    </div>
+                    <h6>User name</h6>
+                    <p class="text-muted">{{username}}</p>
+
+
+                </div>
+            </div>
+            <div class="col col-6">
+                <div class="card h-100 text-center" style="background: transparent;">
+                    <i class="bi bi-person-vcard-fill" style="font-size: 15rem;"></i>
+                </div>
+            </div>
+            <h6>YOUR ORDER</h6>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Total price</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let order of orders">
+                    <tr>
+                        <th scope="row">{{order.cart_id}}</th>
+                        <td>{{order.user_name}}</td>
+                        <td>{{order.total_price.toLocaleString()}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-primary px-2 py-3" routerLink="/">Return to shop <span><i
+                        class="bi bi-bag ms-1"></i></span></a>
+        </div>
+    </div>
+</div>
+
+<!-- script for upload file picture -->
+<script>
+    const input = document.querySelector("input[type=file]");
+    input.value = "foo";
+</script>

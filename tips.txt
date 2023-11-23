@@ -1,0 +1,4 @@
+Add bootstrap to Angular: https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application/
+
+Gitlab Command Line: https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html
+

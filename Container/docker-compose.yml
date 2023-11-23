@@ -1,0 +1,65 @@
+version: '3'
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+            - ../Backend:/app
+        profiles: ["dev", "release"]
+        depends_on:
+            - php
+    php:
+        build:
+            context: .
+            dockerfile: PHP.dockerfile
+        volumes:
+            - ../Backend:/app
+        profiles: ["dev", "release"]
+        depends_on:
+            - mysql
+        
+    mysql:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: 'password'
+            MYSQL_USER: 'user'
+            MYSQL_PASSWORD: 'password'
+            MYSQL_DATABASE: 'phpmyadmin'
+        volumes:
+            - mysqldata:/var/lib/mysql
+            - ./mysql-dump:/docker-entrypoint-initdb.d
+        ports:
+            - 3306:3306
+        profiles: ["dev", "release"]
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        links:
+            - mysql
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        restart: always
+        ports:
+            - 8080:80
+        profiles: ["dev", "release"]
+        depends_on:
+            - mysql
+
+    angular-app:
+        build: 
+            context: ../Frontend
+            dockerfile: ../Container/angular.dockerfile
+        profiles: ["release"]
+        volumes:
+            - ./nginx-release.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - 4200:80
+        depends_on:
+            - web
+
+volumes:
+  mysqldata:

@@ -1,0 +1,1 @@
+export const BASE_API_URL = "/bootstrap-5.0.2-dist/api"

@@ -1,0 +1,7 @@
+GetAll() return all shoes data[]
+getAllShoesBySearchTerm(string): find shoeses base on the data string input to the this function, using filter to find shoeses that like the string input to
+getAllShoesbyTag() Filter to find shoeses of a brand from all data shoes
+getAllTag(): return all brand shoes (this tag can be either from data or fix them on client)
+getShoesById(): find a shoes from id by filter the all product shoes from getAll()
+getShoesByGender(): find shoeses for male or female
+this myapp project data also contain the basic function for add-to-cart, cart, press a product from menu page or all product page to jump to view page of a shoes base on its ID

@@ -1,0 +1,27 @@
+.form-signup{
+    margin:0 auto;
+    background: transparent; 
+    border: 2px solid;
+    backdrop-filter: blur(15px);
+    max-width: 400px;
+    padding: 35px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    transition: 0.5s;
+}
+.form-signup h2,p{
+    text-align: center;
+    
+}
+.form-group{
+    padding-bottom: 12px;
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+.back-vid{
+    z-index: -1;
+}

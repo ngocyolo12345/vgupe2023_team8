@@ -1,0 +1,14 @@
+.space1 {
+    width: 4px;
+  }
+
+
+.hiddenRow {
+  padding: 0 !important;
+}
+
+div .description {
+  text-align: left;
+  padding-left: 110px;
+  width: 900px;
+}

@@ -1,0 +1,7 @@
+{
+    "/bootstrap-5.0.2-dist/api": {
+    "target": "http://localhost:5000",
+    "secure": false,
+    "changeOrigin": false
+    }
+}

@@ -1,0 +1,62 @@
+
+
+<section class="py-3">
+
+    <app-not-found-page [visible]="!shoeses || shoeses.length <=0"></app-not-found-page>
+    <div *ngIf = "shoeses.length > 0 && !gender">
+        <app-tags></app-tags>
+    </div>
+    <div class="container px-4 px-lg-5 mt-5">
+       
+            <div *ngIf = "shoeses.length > 0 && gender" class="checkbox">
+                <div *ngFor="let brand of brands">
+                    <input type="checkbox" [value]="brand" class="checkboxN" (click)="onBrandClick($event)">
+                    {{brand}}
+                    
+                </div>
+            </div>
+        
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let product of shoeses">
+                <div class="col mb-5 products">
+                    <div class="card">
+                        
+                        <!-- Product image-->
+                        <a routerLink="/view/{{product.id}}">
+                            <img class="card-img-top" src="data:image/png;base64, {{product.imageURL}}" ALT="imageFail" >
+                        </a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="content">
+                                    <!-- Product name-->
+                                    <h5 class="name">{{product.name}}</h5>
+                                    <!-- Product price-->
+                                    <div class="product-item-footer">
+                                        <div class="brand">
+                                                Brand: {{product.brand}}
+                                        </div>
+                                        <div class="gender">
+                                                Gender: {{product.gender}}
+                                        </div>
+                                        <div class="price">
+                                                Price : {{product.price}}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addToCart(product)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section>
+
+
+    

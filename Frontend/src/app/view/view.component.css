@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+.container {
+    position: relative;;
+    /* margin: auto; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    overflow: hidden;
+    width: 10000px;
+    height: 750px;
+    /* background: rgb(249, 247, 247); */
+    background-color: #f5f5f5;
+    box-shadow: 10px 100px 15px rgba(rgb(184, 182, 182), .5);
+    border-radius: 15px;
+    font-family: "Lato", sans-serif;
+  }
+  .subproduct{
+    position: relative;;
+    margin: auto;
+    overflow: hidden;
+   
+  }
+  .card:hover{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    transform: scale(1.1);
+  }
+  .pname {
+    font-size: 30px;
+    color:rgb(2, 2, 2);
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    
+  }
+  
+  .price {
+    font-size: 1.2em;
+    color: black;
+    margin-top: 50px;
+    height: 100px;
+    
+  }
+  
+  .big-img{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 200px;
+    animation: base linear 20s infinite; 
+    background-position-x: 0px;
+    background-position-y: 50%;
+    
+  }
+  .big-img img {
+    width: 420px;
+    margin-top: 47px;
+  }
+
+  .small-img{
+    width: 70px;
+    overflow: hidden;
+    box-shadow: 10px 10px 15px rgba(rgb(184, 182, 182), .5);
+    border-radius: 10px;
+    justify-content: space-between;
+    display: flex;
+    padding: 5px;
+    
+    
+  }
+  .small-img img {
+    
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    
+}
+  
+  .big-img:hover{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    transform: scale(1.2);
+    
+  }
+  /* .slideshow-buttons {
+    top: 70%;
+    display: none;
+  } */
+  .product {
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    top: 10%;
+    left: 60%;
+  }
+  
+  .pdescription {
+    text-transform: none;
+    letter-spacing: 1;
+    margin-bottom: 17px;
+    color: black;
+    font-size: 15px;
+    margin-right: 25px;
+    text-align: left ;
+    margin-bottom: 100px;  
+    margin-right: 100px;
+  }
+
+  
+  .sizes {
+    display: grid;
+    color:pink;
+    grid-template-columns: repeat(auto-fill, 30px);
+    width: 60%;
+    grid-gap: 4px;
+    margin-left: 20px;
+    margin-top: 5px;
+    
+  }
+  .size:hover {
+    cursor: pointer;
+  }
+  
+  .pick {
+    margin-top: 11px;
+    margin-bottom:0;
+    margin-left: 20px;
+  }
+  
+  .size {
+    padding: 9px;
+    border: 1px solid lightblue;
+    font-size: 0.7em;
+    text-align: center;
+    
+  }
+  .size:hover{
+    background: red;
+    color: white;
+    transition: all .4s ease-in-out;
+  }
+  
+  .btn{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    transform: scale(1.1);
+  }
+
+  .focus{
+    background: red;
+    color:white ;
+  }
+  
+  

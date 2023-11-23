@@ -1,0 +1,20 @@
+
+
+<div class="container py-5">
+    <div class="tex-white">
+        <h1>
+            Define You.
+        </h1>
+        <div class="cards-gallery">
+            <div class="card thumbnails" *ngFor="let thumbnail of thumbnails"
+                style="background-image: url({{thumbnail.url}});">
+                <a class="link-light">
+                    <div class="card-img-overlay" (click)="MovePage(thumbnail.id)">
+                        <h5 class="text-center text-white position-relative top-50 translate-middle-y"
+                            style="font-size: 3rem;">{{thumbnail.id}}</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

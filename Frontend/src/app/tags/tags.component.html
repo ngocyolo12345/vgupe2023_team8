@@ -1,0 +1,8 @@
+<div *ngIf="tags" class="buttons">
+    <button class="btn-hover" *ngFor="let tag of tags" (click)="ButtonTag(tag.name)">
+        {{tag.name}}
+    </button>
+    <!-- <router-outlet></router-outlet> -->
+    <!-- routerLink="/AllProduct/tag/{{tag.name}}" -->
+    <!-- (click)="onTagSelected(tag.name)" -->
+</div>
